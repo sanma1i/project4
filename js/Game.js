@@ -34,7 +34,8 @@ class Game {
         let $liveHeart = $("#scoreboard li img");
         $liveHeart.attr("src", "images/liveHeart.png");
         $liveHeart.attr("alt", "Heart Icon");
-        $liveHeart.show();
+        $liveHeart.removeClass('lost');
+        $liveHeart.addClass('tries');
         this.missed = 0;
         }
         
@@ -65,10 +66,15 @@ class Game {
     removeLife() {
         this.missed = this.missed + 1;
         const lostHeart = 'images/lostHeart.png';   //replaces liveHeart'png with lostHeart.png
-        const $availHeart = $('#scoreboard li:not(.lost)').last(); //Does not duplicate the last heart
-        const $availHeartImg = $availHeart.find('img');
-        $availHeartImg.attr('src', lostHeart);
-        $availHeart.addClass('lost');
+       //const $availHeart = $('#scoreboard li:not(.lost)').last(); //Does not duplicate the last heart
+        //const $availHeartImg = $availHeart.find('img');
+        const $lives = $('#scoreboard li');
+        let $removeLife = $lives.eq(this.missed);
+        let $replaceIMG = $removeLife.children().first();
+        $replaceIMG.attr('src', lostHeart);
+        $replaceIMG.attr("alt", "Lost Icon");
+        $replaceIMG.removeClass('tries');
+        $replaceIMG.addClass('lost');
         if (this.missed >= 5)                      //If player has 5 missed guesses,the game is over
         {
             this.gameOver(false);

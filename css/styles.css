@@ -4,8 +4,8 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win: blue;
+  --color-lose: red;
   --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
@@ -86,7 +86,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: brown;
 }
 
 
@@ -110,8 +110,8 @@ button {
 
 
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
+  color:yellow;
+  background-color:green;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -180,7 +180,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: yellow;
 }
 
 .start a {
@@ -188,7 +188,7 @@ button {
 }
 
 .win {
-  background-color: var(--color-win);
+  background-color: blue;
 }
 
 .win a {
@@ -196,7 +196,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: red;
 }
 
 .lose a {
