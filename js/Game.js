@@ -69,7 +69,7 @@ class Game {
        //const $availHeart = $('#scoreboard li:not(.lost)').last(); //Does not duplicate the last heart
         //const $availHeartImg = $availHeart.find('img');
         const $lives = $('#scoreboard li');
-        let $removeLife = $lives.eq(this.missed);
+        let $removeLife = $lives.eq(this.missed - 1);
         let $replaceIMG = $removeLife.children().first();
         $replaceIMG.attr('src', lostHeart);
         $replaceIMG.attr("alt", "Lost Icon");
